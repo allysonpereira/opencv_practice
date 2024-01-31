@@ -34,13 +34,22 @@ print('Training done -----------------')
 features = np.array(features, dtype='object')
 labels = np.array(labels)
 
-face_recognizer = cv.face.LBPHFaceRecognizer_create()
+face_recognizer = cv.face.LBPHFaceRecognizer_create() # getting error
 
 # Train the Recognizer on the features list and the labels list
 face_recognizer.train(features, labels)
 
+face_recognizer.save('face_trained.yml')
 np.save('features.npy', features)
 np.save('labels.npy', labels)
+
+
+
+
+
+
+
+
 
 
 
